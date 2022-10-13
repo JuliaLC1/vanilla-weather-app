@@ -15,34 +15,40 @@
   </head>
   <body>
     <div class="container">
-      <h1>New York</h1>
-      <ul>
-        <li>Thursday 08:16</li>
-        <li>Clear</li>
-      </ul>
-      <div class="row">
-        <div class="col-6">
-          <div>
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Clear"
-            />
-            13°C | °F
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-6">
+            <h1>New York</h1>
+            <ul id="date-time">
+              <li>Thursday 08:16</li>
+              <li>Clear</li>
+            </ul>
           </div>
         </div>
-        <div class="col-6">
-          <ul>
-            <li>Precipitation: 0%</li>
-            <li>Humidity: 73%</li>
-            <li>Wind: 2km/h</li>
-          </ul>
+        <div class="row">
+          <div class="col-6">
+            <div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="Clear"
+              />
+              13°C | °F
+            </div>
+          </div>
+          <div class="col-6">
+            <ul id="observations">
+              <li>Precipitation: 0%</li>
+              <li>Humidity: 73%</li>
+              <li>Wind: 2km/h</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="open-link">
-        <a href="https://github.com/JuliaLC1/vanilla-weather-app"
-          >Open-source code</a
-        >
-        by Julia
+        <div class="open-link">
+          <a href="https://github.com/JuliaLC1/vanilla-weather-app"
+            >Open-source code</a
+          >
+          by Julia
+        </div>
       </div>
     </div>
     <script src="src/index.js"></script>
