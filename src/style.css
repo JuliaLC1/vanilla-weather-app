@@ -52,10 +52,14 @@ li::first-letter {
 .temperature span {
   position: relative;
   top: -34px;
+  text-decoration: none;
 }
-
 .temperature span a {
   text-decoration: none;
+}
+.temperature .active {
+  color: #212121;
+  cursor: default;
 }
 .open-link a {
   text-decoration: none;
