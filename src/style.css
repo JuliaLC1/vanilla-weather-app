@@ -68,3 +68,18 @@ li::first-letter {
 .open-link {
   font-size: 15px;
 }
+
+.forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.forecast-day {
+  font-size: 16px;
+  color: #878787;
+}
+.forecast-temp {
+  font-size: 13px;
+}
+.forecast-low-temp {
+  color: #878787;
+}
