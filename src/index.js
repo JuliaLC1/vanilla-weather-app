@@ -106,31 +106,7 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-function displayFerenheit(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp-number");
-  celsiusLink.classList.remove("active");
-  ferenheitLink.classList.add("active");
-  let ferenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temp.innerHTML = Math.round(ferenheitTemperature);
-}
-function displayCelsius(event) {
-  event.preventDefault();
-  let temp = document.querySelector("#temp-number");
-  celsiusLink.classList.add("active");
-  ferenheitLink.classList.remove("active");
-  temp.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let ferenheitLink = document.querySelector("#ferenheit-link");
-ferenheitLink.addEventListener("click", displayFerenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsius);
-
-search("New York");
+search("London");
