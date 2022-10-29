@@ -21,27 +21,42 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+  return day;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let dailyForecast = response.data.daily;
+
   let forecast = document.querySelector("#weather-forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun"];
   let forecastHTML = `<div class = "row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` <div class="col-2">
-         <div class="forecast-day">${day}</div>
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-2">
+         <div class="forecast-day">${formatDay(forecastDay.time)}</div>
             <img
-                src="http://openweathermap.org/img/wn/01d@2x.png"
+                src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                  forecastDay.condition.icon
+                }.png"
                 alt="icon"
                 width="42"
             />
          <div class="forecast-temp">
-            <span class="forecast-high-temp">18°</span>
-            <span class="forecast-low-temp">12°</span>
+            <span class="forecast-high-temp">${Math.round(
+              forecastDay.temperature.maximum
+            )}°</span>
+            <span class="forecast-low-temp">${Math.round(
+              forecastDay.temperature.minimum
+            )}°</span>
          </div>
         </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -82,7 +97,6 @@ function displayTemperature(response) {
 function search(city) {
   let apiKey = "f4e71a2fe0d4993tbef26be3ofa63512";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
 }
 
