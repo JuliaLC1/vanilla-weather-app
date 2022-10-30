@@ -24,12 +24,13 @@ li::first-letter {
 .weather-app-wrapper {
   max-width: 600px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 60px;
+  font-family: "Quicksand", sans-serif;
 }
 .weather-app {
-  padding: 15px;
+  padding: 25px;
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 #date-time {
   position: relative;
@@ -74,11 +75,11 @@ li::first-letter {
   text-align: center;
 }
 .forecast-day {
-  font-size: 16px;
+  font-size: 18px;
   color: #878787;
 }
 .forecast-temp {
-  font-size: 13px;
+  font-size: 15px;
 }
 .forecast-low-temp {
   color: #878787;
